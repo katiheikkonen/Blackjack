@@ -1,8 +1,12 @@
 import java.util.Scanner;
 
 public class Main{
+
+    /**
+    * Used for either starting a new game or downloading existing game
+    */
     public static void main(String[] args){
-        BlackjackGame game = new BlackjackGame();
+        Blackjack game = new Blackjack();
         boolean startingGame = true;
 
         Scanner sc = new Scanner(System.in);

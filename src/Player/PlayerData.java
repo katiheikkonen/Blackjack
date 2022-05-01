@@ -1,8 +1,16 @@
 package src.Player;
 import java.io.*;
 
+/**
+* Manages saving, downloading and deleting of player data
+*/
 public class PlayerData {
 
+   /**
+   * Saves player data to location /tmp/player.ser
+   * @param player object of the Player to be saved
+   * @throws java.io.IOException - Signals that an I/O exception of some sort has occurred. Exceptions are produced by failed or interrupted I/O operations.
+   */
    public static void savePlayerData(Player player) {
            
       try {
@@ -18,6 +26,12 @@ public class PlayerData {
       }
    }
 
+   /**
+   * Downloads player data from location /tmp/player.ser
+   * @throws java.lang.ClassNotFoundException - Signals that an I/O exception of some sort has occurred. Exceptions are produced by failed or interrupted I/O operations.
+   * @throws java.io.IOException - No saved Player class found
+   * @return player Player data of the saved player
+   */
    public static Player downloadPlayerData() {
       Player player = null;
       try {
@@ -37,6 +51,9 @@ public class PlayerData {
       return player;
    }
 
+   /**
+   * Deletes player data from location /tmp/player.ser if it exists
+   */
    public static void deletePlayerData() {
       File file = new File("/tmp/player.ser");
       if (file.delete()) { 
